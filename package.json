@@ -1,11 +1,12 @@
 {
-  "name": "tech-blog",
+  "name": "Tech-Blog",
   "version": "1.0.0",
   "description": "```md ## User Story AS A developer who writes about tech I WANT a CMS-style blog site SO THAT I can publish articles, blog posts, and my thoughts and opinions ```",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
