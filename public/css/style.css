@@ -1,17 +1,17 @@
 :root {
     --offwhite: #f4f4f6;
     --lightcyan: #e0fbfc;
-    --powder: #c2dfe3;
+    /* --powder: #c2dfe3; */
     --pewter: #9db4c0;
     --cadet: #5c6b73;
-    --gunmetal: #253237;
+    --gunmetal: #bb5e1f;
   }
   
   body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background-color: var(--powder);
+    /* background-color: var(--powder); */
     font-family: "Oswald", sans-serif;
     color: var(--gunmetal);
   }
@@ -40,10 +40,6 @@
     font-size: 16px;
   }
   
-  #tb-logo {
-    margin-top: 20px;
-    margin-left: 10px;
-  }
   
   main {
     flex: 1 0 auto;

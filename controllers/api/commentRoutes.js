@@ -12,8 +12,6 @@ router.post('/', async (req, res) => {
       post_id: req.body.post_id,
     });
 
-    // REDIRECT BACK TO THE POST PAGE THAT WAS COMMENTED ON
-    // https://stackoverflow.com/questions/15825333/how-to-reload-current-page-in-express-js/31652604
     res.redirect(req.get('referer'));
   } catch (err) {
     res.status(400).json(err);
