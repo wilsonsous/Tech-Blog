@@ -1,44 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fund My Project!</title>
-  <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <title>The Tech Blog</title>
 </head>
-
 <body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">Fund My Project!</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
+  <!-- NAV BAR -->
+  <nav class="nav-extended">
+    <div class="nav-wrapper">
+      <ul class="right">
+        <!-- HOME BUTTON -->
+        <li><a href="/" class="nav-link"><i class="material-icons left" id="home">home</i>home</a></li>
+        <!-- LOGOUT/LOGIN BUTTONS -->
+        {{#if loggedIn}}
+        <li><a href="#" class="nav-link" id="logout-link"><i class="material-icons left" id="logout">lock_outline</i>logout</a></li>
         {{else}}
-        <a href="/login">login</a>
+        <li><a href="/login" class="nav-link"><i class="material-icons left" id="login">vpn_key</i>login</a></li>
         {{/if}}
-      </nav>
-    </header>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
-  </div>
+        <!-- USER DASHBOARD BUTTON -->
+        {{#if loggedIn}}
+        <li><a href="/dashboard" class="nav-link"><i class="material-icons left" id="dashboard">person_outline</i>{{userName}}'s tech talk</a></li>
+        {{else}}
+        <li><a href="/dashboard" class="nav-link"><i class="material-icons left" id="dashboard">person_outline</i>my tech talk</a></li>
+        {{/if}}
+      </ul>
+    </div>
+    <!-- PAGE TITLE -->
+    <div class="nav-content center">
+      <span class="nav-title">The Tech Blog</span>
+    </div>
+  </nav>
+  <main>
+    <div class="container">
+      <!-- .HANDLEBARS TEMPLATES RENDER HERE -->
+      {{{body}}}
+    </div>
+  </main>
+  <!-- FOOTER FOR COPYWRITE -->
+  <footer class="page-footer">
+    <div class="container center-align my-footer">
+    © 2021 The Tech Blog Peeps
+    </div>
+  </footer>
 
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
+  <!-- LINK TO JAVASCRIPT -->
+  {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
-</body>
 
+  <!-- LINK TO MATERIALIZE JAVASCRIPT -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
 </html>
+
+<!-- if extra time: add a hello, user button for when loggedIn -->

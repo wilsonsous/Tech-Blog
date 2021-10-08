@@ -1,0 +1,228 @@
+:root {
+    --offwhite: #f4f4f6;
+    --lightcyan: #e0fbfc;
+    --powder: #c2dfe3;
+    --pewter: #9db4c0;
+    --cadet: #5c6b73;
+    --gunmetal: #253237;
+  }
+  
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: var(--powder);
+    font-family: "Oswald", sans-serif;
+    color: var(--gunmetal);
+  }
+  
+  /* NAVIGATION BAR */
+  nav {
+    background-color: var(--gunmetal);
+    color: var(--offwhite);
+  }
+  
+  nav .nav-title {
+    font-size: 48px;
+  }
+  
+  .nav-link {
+    font-size: 18px;
+    padding-right: 10px;
+    padding-left: 10px;
+    color: var(--offwhite);
+  }
+  
+  #login,
+  #logout,
+  #home,
+  #dashboard {
+    font-size: 16px;
+  }
+  
+  #tb-logo {
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+  
+  main {
+    flex: 1 0 auto;
+    margin-top: 16px;
+  }
+  
+  /* POSTS FOR HOMEPAGE, DASHBOARD, AND SINGLE POST PAGE */
+  
+  .post-div {
+    text-align: center;
+    margin-bottom: 16px;
+    border: 2px solid var(--gunmetal);
+    border-radius: 13px;
+  }
+  
+  .title-byline {
+    margin-bottom: 0px;
+    border-bottom: 1px solid var(--gunmetal);
+    border-radius: 10px 10px 0px 0px;
+    background-color: var(--gunmetal);
+    color: var(--offwhite);
+  }
+  
+  .title-byline p {
+    font-size: 18px;
+  }
+  
+  .post-byline {
+    margin-top: 0px;
+    margin-bottom: 4px;
+  }
+  
+  .post-text {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: var(--offwhite);
+    border-radius: 0px 0px 10px 10px;
+    color: var(--gunmetal);
+    font-size: 18px;
+  }
+  
+  .post-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+  
+  #create-post,
+  #create-account {
+    color: var(--offwhite);
+  }
+  
+  #submit-new-post {
+    margin-top: 10px;
+  }
+  
+  #delete-post {
+    margin-left: 10px;
+  }
+  
+  /* COMMENTS */
+  
+  #comment-section-label {
+    margin-top: 60px;
+  }
+  
+  .comment-div {
+    border: 2px solid var(--gunmetal);
+    border-radius: 13px;
+    font-style: italic;
+    background-color: var(--offwhite);
+    font-size: 18px;
+  }
+  
+  .posted-comment {
+    display: inline;
+    text-align: right;
+  }
+  
+  .empty-comment-title {
+    background-color: var(--gunmetal);
+    border-radius: 10px 10px 0px 0px;
+    border-bottom: 1px var(--gunmetal) solid;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  
+  /* LOGIN PAGE */
+  
+  #login-div {
+    margin-top: 10px;
+  }
+  
+  #login-page-title {
+    color: var(--gunmetal);
+  }
+  
+  form label {
+    color: var(--gunmetal);
+    font-size: 14px;
+  }
+  
+  #create-account-div {
+    margin-top: 50px;
+  }
+  
+  /* FORMS & BUTTONS */
+  
+  .btn {
+    background-color: var(--cadet);
+    font-family: "Oswald", sans-serif;
+    border-radius: 10px;
+    text-transform: lowercase;
+  }
+  
+  .btn:hover {
+    background-color: var(--pewter);
+  }
+  
+  input {
+    font-family: "Oswald", sans-serif;
+    color: var(--gunmetal);
+  }
+  
+  /* FOOTER */
+  
+  .page-footer {
+    margin-top: 16px;
+    background-color: var(--gunmetal);
+    font-size: 16px;
+  }
+  
+  .my-footer {
+    padding-bottom: 20px;
+  }
+  
+  /* -------------------- RESPONSIVENESS ------------------- */
+  /* https://stackoverflow.com/questions/6370690/media-queries-how-to-target-desktop-tablet-and-mobile */
+  
+  /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+  @media screen and (min-width: 320px) {
+  }
+  
+  /* smartphones, Android phones, landscape iPhone */
+  @media screen and (min-width: 480px) {
+    .nav-content {
+      text-align: left;
+      margin-left: 30px;
+    }
+  }
+  
+  /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+  @media screen and (min-width: 600px) {
+  }
+  
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+  @media screen and (min-width: 801px) {
+    form label {
+      font-size: 16px;
+    }
+  }
+  
+  /* big landscape tablets, laptops, and desktops */
+  @media screen and (min-width: 992px) {
+    .title-byline h3,
+    .post-text {
+      text-align: left;
+    }
+  
+    /* .title-byline p {
+      text-align: right;
+    } */
+  
+    .post-byline {
+      margin-top: 48px;
+      text-align: right;
+    }
+  }
+  
+  /* hi-res laptops and desktops */
+  @media screen and (min-width: 1281px) {
+  }
