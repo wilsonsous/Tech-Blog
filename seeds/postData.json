@@ -1,14 +1,17 @@
 [
     {
-      "name": "Demand job in 2021",
+      "name": "High Demanding jobs in 2021",
+      "title": "High Demanding jobs in 2021",
       "text": "A mobile app that will send you notifications."
     },
     {
-      "name": "The Ultimate Tech Quiz",
+      "name": "Test Your Knowledge",
+      "title": "Test Your Knowledge",
       "text": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!"
     },
     {
-      "name": "Interview prep",
+      "name": "Interview certified",
+      "title": "Interview certified",
       "text": "A mobile app that will help you prep you for your next interview."
     } 
   ]
