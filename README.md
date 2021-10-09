@@ -18,7 +18,7 @@ This application will assist in keeping track of the current company directory w
 - MySQL
 
 ## Link
-You can view the demo here :
+You can view the demo here :  https://blog-tech-mvc.herokuapp.com/
 
 ## Visuals
 
