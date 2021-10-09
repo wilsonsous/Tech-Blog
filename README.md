@@ -21,6 +21,7 @@ This application will assist in keeping track of the current company directory w
 You can view the demo here :  https://blog-tech-mvc.herokuapp.com/
 
 ## Visuals
+<img width="1788" alt="Screen Shot 2021-10-09 at 6 44 07 PM" src="https://user-images.githubusercontent.com/78562158/136675488-14c13776-d874-4cb3-9857-fa2b387cd1a1.png">
 
 
 
