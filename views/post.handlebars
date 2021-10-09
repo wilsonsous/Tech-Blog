@@ -1,23 +1,19 @@
-<!-- RENDER THE POST-DETAILS TEMPLATE FOR THE SPECIFIC POST -->
 {{> post-details}}
-<!-- SHOW EDIT AND DELETE BUTTONS FOR A POST IF ITS THE USER'S POST -->
 {{#if userPost}}
 {{#if loggedIn}}
 <div>
-    <!-- DELETE POST BUTTON -->
+    <!-- Button for deleting post-->
     <button id="delete-post" class="btn btn-primary right waves-effect waves-light btn-small" data-id="{{id}}"><i class="material-icons" data-id="{{id}}">delete</i></button>
-    <!-- EDIT POST BUTTON -->
+    <!-- Button for editing post -->
     <a href="/editpost/{{id}}"><button id="edit-post" class="btn btn-primary right waves-effect waves-light btn-small"><i class="material-icons">edit</i></button></a>
 </div>
 {{/if}}
 {{/if}}
-<!-- COMMENTS FOR THE SPECIFIED POST -->
+<!-- Comments for given post -->
 <h5 id="comment-section-label">comments:</h5>
-<!-- RENDER THE COMMENT-DETAILS TEMPLATE FOR EACH COMMENT OF THE POST -->
 {{#each comments as |comment|}}
 {{> comment-details}}
 {{/each}}
-<!-- IF THE USER IS LOGGED IN, FORM TO ADD A COMMENT TO THE POST -->
 {{#if loggedIn}}
 <div class="row">
   <div class="col-md-6">
@@ -35,11 +31,11 @@
 </div>
 {{/if}}
 
-<!-- IF THE USER IS LOGGED IN, JAVASCRIPT LOGIC FOR ADDING A NEW COMMENT TO POST -->
+<!-- Javascript logic for adding new comment to post -->
 {{#if loggedIn}}
 <script src="/public/js/addcomment.js"></script>
 {{/if}}
-<!-- IF ITS THE USER'S POST, JAVASCRIPT LOGIC FOR EDIT & DELETE BUTTONS -->
+<!-- Javascript logic for edit and delete buttons -->
 {{#if userPost}}
 <script src="/public/js/deletepost.js"></script>
 {{/if}}

@@ -1,14 +1,12 @@
-// BRING IN EXPRESS ROUTER AND USER MODEL
 const router = require('express').Router();
 const { User } = require('../../models');
 
-// POST REQUEST TO CREATE NEW USER
+// Creates new user
 router.post('/', async (req, res) => {
   try {
-    // CREATE A NEW USER WITH DATA SUBMITTED IN SIGNUP FORM
+    // Creates new user from signup
     const userData = await User.create(req.body);
 
-    // CREATE NEW SESSION PARAMETERS TO FLAG THAT USER IS LOGGED IN AND THE USER'S ID
     req.session.save(() => {
       req.session.userId = userData.id;
       req.session.loggedIn = true;
@@ -20,25 +18,24 @@ router.post('/', async (req, res) => {
   }
 });
 
-// POST ROUTE TO LOGIN A USER
+// Logins the user
 router.post('/login', async (req, res) => {
   try {
-    // FIND A USER IN THE DB WITH THE USERNAME SUBMITTED IN LOGIN FORM
+    // Finds user within db
     const userData = await User.findOne({ where: { name: req.body.name } });
 
-    // IF NO USER IS FOUND IN DB WITH THAT USERNAME
+    // Error if user is not found within db
     if (!userData) {
-      // RETURN A 400 ERROR
       res
         .status(400)
         .json({ message: 'Incorrect username or password, please try again' });
       return;
     }
 
-    // USE INSTANCE METHOD TO CHECK THE SUBMITTED PASSWORD WITH DB
+    // Checks password within db
     const validPassword = await userData.checkPassword(req.body.password);
 
-    // IF PASSWORD DOESN'T MATCH, THROW 400 ERROR
+    // Error if password does not match
     if (!validPassword) {
       res
         .status(400)
@@ -46,7 +43,7 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    // IF USER LOGIN SUCCESSFUL, CREATE SESSION VARIABLES FOR USER ID AND LOGGEDIN
+    // Creates session variable for user id if login successful
     req.session.save(() => {
       req.session.userId = userData.id;
       req.session.loggedIn = true;
@@ -59,9 +56,8 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// POST REQUEST FOR LOGGING OUT A USER
+// Request for logging out user
 router.post('/logout', (req, res) => {
-  // IF USER IS LOGGED IN, DESTROY THEIR SESSION & ASSOCIATED PARAMETERS
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
@@ -71,5 +67,4 @@ router.post('/logout', (req, res) => {
   }
 });
 
-// EXPORT THE ROUTER
 module.exports = router;

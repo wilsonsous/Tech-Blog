@@ -16,7 +16,7 @@
     color: var(--gunmetal);
   }
   
-  /* NAVIGATION BAR */
+  /* Nav bar */
   nav {
     background-color: var(--gunmetal);
     color: var(--offwhite);
@@ -46,7 +46,7 @@
     margin-top: 16px;
   }
   
-  /* POSTS FOR HOMEPAGE, DASHBOARD, AND SINGLE POST PAGE */
+  /* Posts */
   
   .post-div {
     text-align: center;
@@ -100,7 +100,7 @@
     margin-left: 10px;
   }
   
-  /* COMMENTS */
+  /* Comments */
   
   #comment-section-label {
     margin-top: 60px;
@@ -127,7 +127,7 @@
     margin-bottom: 0px;
   }
   
-  /* LOGIN PAGE */
+  /* Login Page */
   
   #login-div {
     margin-top: 10px;
@@ -146,7 +146,7 @@
     margin-top: 50px;
   }
   
-  /* FORMS & BUTTONS */
+  /* Forms/Buttons */
   
   .btn {
     background-color: var(--cadet);
@@ -164,7 +164,7 @@
     color: var(--gunmetal);
   }
   
-  /* FOOTER */
+  /* Footer */
   
   .page-footer {
     margin-top: 16px;
@@ -175,9 +175,6 @@
   .my-footer {
     padding-bottom: 20px;
   }
-  
-  /* -------------------- RESPONSIVENESS ------------------- */
-  /* https://stackoverflow.com/questions/6370690/media-queries-how-to-target-desktop-tablet-and-mobile */
   
   /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
   @media screen and (min-width: 320px) {

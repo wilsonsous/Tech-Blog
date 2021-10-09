@@ -1,17 +1,13 @@
-// BRING IN SEQUELIZE MODELS, BCRYPT PACKAGE FOR USER AUTHENTICATION AND ACCESS TO DB CONNECTION
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-// CREATE A POST MODEL
 class User extends Model {
-  // INSTANCE METHOD FOR CHECKING USER'S PASSWORD AGAINST HASHED DB PASSWORD
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
 
-// CREATE A POST MODEL
 User.init(
   {
     id: {
@@ -42,7 +38,6 @@ User.init(
   },
   {
     hooks: {
-      // BEFORE CREATING A NEW USER IN DB, HASH THEIR PASSWORD
       beforeCreate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
@@ -56,5 +51,4 @@ User.init(
   }
 );
 
-// EXPORT THE POST MODEL FOR USE IN ROUTES
 module.exports = User;

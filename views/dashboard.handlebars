@@ -1,8 +1,6 @@
-<!-- RENDERING THE POST-DETAILS TEMPLATE FOR EACH OF THE USER'S POST -->
 {{#each posts as |post|}}
 {{> post-details}}
 {{/each}}
-<!-- BUTTON TO REDIRECT TO CREATING A NEW BLOG POST -->
 <div class="center">
     <button id="add-post" class="btn btn-primary"><a href="/addpost" id="create-post">Create Post</a></button>
 </div>

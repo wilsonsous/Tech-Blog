@@ -7,20 +7,20 @@ const userData = require('./userData.json');
 const postData = require('./postData.json');
 const commentData = require('./commentData.json')
 
-// FUNCTION TO SEED DATABASE
+// Function to seed database
 const seedDatabase = async () => {
-  // SYNC THE DATABASE
+  // Syncs database
   await sequelize.sync({ force: true });
   console.log('\n----- DATABASE SYNCED -----\n');
 
-  // CREATE NEW USERS WITH USER SEED DATA, PASS THROUGH HOOKS FOR PASSWORD HASHING
+  // Creates new users
   const users = await User.bulkCreate(userData, {
     individualHooks: true,
     returning: true,
   });
   console.log('\n----- USERS SEEDED -----\n');
 
-  // CREATE NEW POST FOR EACH POST IN POST SEED DATA, RANDOMLY ASSIGNING A USER ID
+  // Creates new posts
   for (const post of postData) {
     await Post.create({
       ...post,
@@ -29,11 +29,10 @@ const seedDatabase = async () => {
   }
   console.log('\n----- POSTS SEEDED -----\n');
 
-  // FIND ALL POSTS IN DB
+  // Finds all post inside database
   const posts = await Post.findAll();
 
-  // CREATE NEW COMMENT FOR EACH COMMENT IN COMMENT SEED DATA
-  // RANDOMLY ASSIGN A USER ID AND POST ID TO COMMENT
+  // Creates random comment
   for (const comment of commentData) {
     await Comment.create({
       ...comment,
@@ -46,5 +45,4 @@ const seedDatabase = async () => {
   process.exit(0);
 };
 
-// RUN THE SEED DATABASE FUNCTION
 seedDatabase();

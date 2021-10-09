@@ -13,19 +13,19 @@
   <title>The Tech Blog</title>
 </head>
 <body>
-  <!-- NAV BAR -->
+  <!-- nav bar -->
   <nav class="nav-extended">
     <div class="nav-wrapper">
       <ul class="left">
-        <!-- HOME BUTTON -->
+        <!-- home button -->
         <li><a href="/" class="nav-link"><i class="material-icons left" id="home">home</i>home</a></li>
-        <!-- LOGOUT/LOGIN BUTTONS -->
+        <!-- login and logout buttons -->
         {{#if loggedIn}}
         <li><a href="#" class="nav-link" id="logout-link"><i class="material-icons left" id="logout">lock_outline</i>logout</a></li>
         {{else}}
         <li><a href="/login" class="nav-link"><i class="material-icons left" id="login">vpn_key</i>login</a></li>
         {{/if}}
-        <!-- USER DASHBOARD BUTTON -->
+        <!-- user dashboard buttons -->
         {{#if loggedIn}}
         <li><a href="/dashboard" class="nav-link"><i class="material-icons left" id="dashboard">person_outline</i>{{userName}}'s tech talk</a></li>
         {{else}}
@@ -33,32 +33,28 @@
         {{/if}}
       </ul>
     </div>
-    <!-- PAGE TITLE -->
+    <!-- title -->
     <div class="nav-content center">
       <span class="nav-title">The Tech Blog</span>
     </div>
   </nav>
   <main>
     <div class="container">
-      <!-- .HANDLEBARS TEMPLATES RENDER HERE -->
+      <!-- Handlebars template -->
       {{{body}}}
     </div>
   </main>
-  <!-- FOOTER FOR COPYWRITE -->
+  <!-- Footer -->
   <footer class="page-footer">
     <div class="container center-align my-footer">
     © 2021 The Tech Blog Peeps
     </div>
   </footer>
 
-  <!-- LINK TO JAVASCRIPT -->
   {{#if loggedIn}}
   <script src="/public/js/logout.js"></script>
   {{/if}}
 
-  <!-- LINK TO MATERIALIZE JAVASCRIPT -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
-
-<!-- if extra time: add a hello, user button for when loggedIn -->
